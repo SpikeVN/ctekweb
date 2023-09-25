@@ -1,0 +1,660 @@
+:root {
+    --font-family: "Space Grotesk",
+        "Space Mono",
+        "SF Pro Display",
+        "SF Pro Texy",
+        'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    --font-size-title: 32px;
+    --font-size-big: 22px;
+    --font-size-text: 18px;
+    --border-radius: 18px;
+    --background-color: #070711;
+    --accent-color: #E517EB;
+    --accent-color-2: #B311B8;
+    --highlight-color: #ED5A5A;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background-color);
+    color: #FFFFFF;
+    font-size: var(--font-size-text);
+    /* margin-left: 8vw; */
+    position: relative;
+    color-scheme: dark;
+    /* width: 100vw; */
+}
+
+.navbar {
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    cursor: default;
+    z-index: 10;
+    /* padding-left: 8vw; */
+    background-color: #15152f96;
+    border-bottom: 2px solid #26264d;
+    /* background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #000000 100%); */
+    backdrop-filter: blur(15px);
+    width: 100%;
+    overflow: hidden;
+}
+
+.navbar a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: unset;
+    font-size: var(--font-size-text);
+    transition: 200ms ease;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.navbar a:hover {
+    color: #c9c9c9;
+}
+
+.navbar .logo {
+    padding: 0 0;
+    margin-left: 8vw;
+}
+
+.navbar .joinbutton {
+    margin-right: calc(8vw - 16px);
+}
+
+.navbar .navbutton {
+    margin-left: 8vw;
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar .navbutton {
+        display: none !important;
+    }
+}
+
+
+
+.joinbutton,
+.highlightedJoinButton .joinbuttonBlur {
+    font-family: var(--font-family);
+    font-weight: bold;
+    color: #FFFFFF;
+    /* margin-right: 4vw; */
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    background: var(--accent-color);
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 0px none;
+    cursor: pointer;
+    transition: 200ms ease;
+
+    /* margin-left: 8vw; */
+}
+
+.joinbutton:hover {
+    background: var(--accent-color-2);
+}
+
+.joinbutton {
+    margin-left: 8vw;
+}
+
+.navbar .joinbutton i {
+    margin-left: 5px;
+}
+
+#taglinebg {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    z-index: -1;
+    max-height: 80vh;
+    position: absolute;
+    top: 0;
+}
+
+.content {
+    margin-left: 8vw;
+}
+
+.tagline {
+    margin-top: 6rem;
+    font-size: 64px;
+    font-weight: 700;
+    background-image: linear-gradient(130deg, var(--accent-color) 0%, #00FF85 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: fit-content;
+    margin-left: 8vw;
+    line-height: 110%;
+}
+
+.tagline h3 {
+    background: linear-gradient(134deg, var(--accent-color) 0%, #FF002E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: fit-content;
+}
+
+#subtext {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 40rem;
+    text-align: justify;
+    margin-right: 2rem;
+    margin-left: 8vw;
+    z-index: -1;
+}
+
+.highlightedJoinButton {
+    position: relative;
+}
+
+.highlightedJoinButton .joinbutton,
+.highlightedJoinButton .joinbuttonBlur {
+    font-size: 21px;
+}
+
+.highlightedJoinButton .joinbutton {
+    position: absolute;
+    z-index: 1;
+}
+
+.highlightedJoinButton .joinbuttonBlur {
+    position: absolute;
+    z-index: auto;
+    /* top: -3rem;
+    left: -3rem;
+    margin: 3rem; */
+    -webkit-filter: blur(30px);
+    -moz-filter: blur(30px);
+    -o-filter: blur(30px);
+    -ms-filter: blur(30px);
+    filter: blur(30px);
+    position: absolute;
+    top: 0;
+    left: 8vw;
+}
+
+
+.decorations {
+    margin-top: 8rem;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    z-index: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.decorations .offset {
+    pointer-events: none;
+    width: 100%;
+    margin-left: -3px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.decorations #waves::before {
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+}
+
+.decorations #waves {
+    z-index: -1;
+    width: 100%;
+}
+
+.decorations .stats {
+    border-radius: var(--border-radius);
+    border: 2px solid var(--accent-color);
+    background: rgba(7, 7, 17, 0.103);
+    backdrop-filter: blur(22.5px);
+    padding: 1rem;
+    text-align: center;
+    font-size: var(--font-size-big);
+    z-index: 2;
+    max-width: calc(100% - 6rem);
+    width: 643px;
+    min-width: 30vw;
+
+}
+
+.decorations .stats h3 {
+    font-weight: bold;
+    font-size: var(--font-size-title);
+    margin-bottom: 0.8rem;
+}
+
+.textline::before {
+    z-index: 1;
+    position: absolute;
+}
+
+.textline {
+    color: var(--accent-color);
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 700;
+    z-index: 5;
+}
+
+
+
+#decorate1 {
+    filter: blur(72px);
+    margin-top: -3rem;
+    position: absolute;
+    transform: translateY(-1rem);
+    z-index: 0;
+}
+
+.feedback {
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    margin-top: -6rem;
+    margin-bottom: 4rem;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+.fcard {
+    text-align: justify;
+    z-index: 2;
+    border-radius: 18px;
+    /* border: 2px solid #E517EB; */
+    border: 2px solid transparent;
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 33vw;
+    width: 418px;
+    background: linear-gradient(var(--background-color), var(--background-color)) padding-box,
+        linear-gradient(to right, var(--accent-color), var(--highlight-color)) border-box;
+    opacity: 0.8;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .feedback {
+        flex-direction: column;
+
+    }
+
+    .fcard {
+        max-width: 100%;
+        width: calc(100% - 16vw);
+    }
+
+    #decorate5,
+    #decorate3 {
+        display: none;
+    }
+
+    .giatrichung h1 {
+        text-align: center !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+.fcard h1 {
+    font-size: 24px;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-align: left;
+}
+
+.fcard h3 {
+    color: #C2C2C2;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.fcard p {
+    font-size: 14px;
+    color: #FFF;
+    font-weight: 400;
+}
+
+.fcard .rating {
+    color: #9CF585;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+#decorate2 {
+    filter: blur(72px);
+    position: absolute;
+    z-index: 1;
+}
+
+#decorate3 {
+    filter: blur(72px);
+    position: absolute;
+    z-index: 1;
+    transform: translateY(40%) translateX(150%);
+}
+
+#decorate4 {
+    filter: blur(72px);
+    position: absolute;
+    z-index: 1;
+    right: 45vw;
+}
+
+#decorate5 {
+    filter: blur(72px);
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    overflow: hidden;
+}
+
+#wave2 {
+    margin-top: -15vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+}
+
+/**
+ * CSS moment 2
+ * The ::before pseudo element is used to 
+ * set the z-index. Without it, this somehow does
+ * work.
+ * https://stackoverflow.com/questions/75970476/how-to-stop-box-shadows-from-mixing-with-each-other
+ */
+.giatrichung h1::before {
+    position: absolute;
+    margin-top: 4rem;
+    z-index: -1;
+    inset: 0;
+}
+
+.giatrichung {
+    width: 100%;
+}
+
+.giatrichung h1 {
+    position: relative;
+    margin-left: 8vw;
+    margin-bottom: 2rem;
+}
+
+.cards-container {
+    display: grid;
+    gap: 24px 24px;
+    margin-left: 8vw;
+    z-index: 2;
+    margin-top: 1rem;
+    position: relative;
+    grid-template-columns: auto auto;
+    max-width: 700px;
+    margin-right: 8vw;
+}
+
+.card {
+    color: #FFF;
+    width: calc(100vw - 16vw);
+    font-size: var(--font-size-text);
+    font-weight: 400;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--accent-color);
+    background: rgba(24, 24, 59, 0.39);
+    backdrop-filter: blur(11.5px);
+    padding: 1rem;
+    z-index: 1;
+    max-width: 400px;
+}
+
+
+
+.card p {
+    text-align: justify;
+}
+
+.card h2 {
+    font-weight: 700;
+    font-size: var(--font-size-title);
+    margin-bottom: 0.5rem;
+}
+
+#decorate6 {
+    filter: blur(72px);
+    position: absolute;
+    transform: translateY(100%) translateX(60%);
+}
+
+.shifted {
+    margin-top: 4rem;
+}
+
+.culled {
+    height: calc(100% - 4rem);
+}
+
+.pulled {
+    margin-top: -2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: auto;
+        width: calc(100% - 16vw);
+    }
+
+    .shifted {
+        margin-top: 2rem;
+    }
+
+    .culled {
+        height: 100%;
+    }
+
+    .pulled {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .straightlayout {
+        margin-top: 2.5rem;
+    }
+}
+
+#superbento {
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+
+#whatopen {
+    border-radius: 20px 0px 0px 20px;
+    border-top: 2px solid #1AE753;
+    border-bottom: 2px solid #1AE753;
+    border-left: 2px solid #1AE753;
+    background: rgba(7, 7, 17, 0.12);
+    backdrop-filter: blur(10.5px);
+    padding: 1.5rem;
+    max-width: 50vw;
+    width: 350px;
+    overflow: hidden;
+}
+
+
+#whatopen h3 {
+    text-align: justify;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#whatopen p {
+    text-align: justify;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#decorate7 {
+    z-index: -1;
+    filter: blur(72px);
+    position: absolute;
+    transform: translateX(-2rem);
+}
+
+@media only screen and (max-width: 600px) {
+    #superbento {
+        flex-direction: column;
+    }
+
+    #whatopen {
+        margin-top: 2rem;
+        margin-left: 8vw;
+        margin-right: 8vw;
+        /* max-width: calc(100%); */
+        /* width: 100%; */
+        max-width: 100vw;
+        width: calc(100vw - 31vw);
+        border: 2px solid #1AE753;
+        border-radius: var(--border-radius);
+
+    }
+}
+
+#decorate8 {
+    z-index: -1;
+    filter: blur(72px);
+    position: absolute;
+    transform: translateX(7rem) translateY(-5rem);
+}
+
+#plsjoin {
+    z-index: -1;
+    margin-top: 3rem;
+}
+
+
+#plsjoinbg {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: inherit;
+}
+
+#plsjoin h1 {
+    color: #000;
+    text-align: left;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    max-width: 42vw;
+    z-index: 1;
+
+}
+
+#plsjoin p {
+    color: #000;
+    text-align: justify;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    max-width: 42vw;
+    z-index: 1;
+}
+
+#shiftedjoin {
+    transform: translateY(120vh);
+}
+
+#foot {
+    z-index: 1;
+    overflow: hidden;
+    margin-top: 5rem;
+    border-top: 2px solid #D333E0;
+    background: rgba(11, 11, 27, 0.78);
+    backdrop-filter: blur(76px);
+    padding-left: 8vw;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    padding-right: 8vw;
+}
+
+#tagname-footer {
+    display: block;
+    position: relative;
+    transform: translateY(-50px) translateX(110px);
+    color: #FFF;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: -20px;
+}
+
+#foot p {
+    color: #6D6DA1;
+    font-family: Space Grotesk;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+}
+
+#decorate9 {
+    z-index: -1;
+    position: absolute;
+    left: 0px;
+    filter: blur(70px) brightness(.6);
+}
+
+#decorate10 {
+    z-index: -1;
+    position: absolute;
+    right: 0px;
+    filter: blur(70px) brightness(.6);
+}
+
+@media only screen and (max-width: 500px) {
+    #tagname-footer {
+        display: none;
+    }
+
+}
